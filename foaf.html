@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>FOAF on Tabulator</title>
+    <link rel="stylesheet" href="http://dig.csail.mit.edu/2005/ajar/ajaw/general.css" type="text/css" />
+    <script type="text/javascript">
+    function installExtension(){
+      InstallTrigger.install({
+      "Tabulator Extension": { URL: "http://dig.csail.mit.edu/2007/tab/databrowser.xpi",
+      toString : function() { return this.URL; } } });
+    }
+    </script>
+  </head>
+ 
+  <body>
+    <h1><a name="top"><image src="img/foaf.jpg"/> on Tabulator</a></h1>
+
+<b>** Note: This application is still at a very early stage of development.</b>
+
+<h3><a name="contents">Table of Contents:</a></h3>
+    <ul style="list-style-type: none">
+      <li><a href="#intro">Introduction to the FOAF Pane</a></li>
+      <li><a href="#example">What can You do with the FOAF Pane?</a></li>
+      <li><a href="#challenges">Challenges not yet Addressed</a></li>
+      <li><a href="#suggestions">Got any Suggestions?</a></li>
+    </ul>
+    
+    <h3><a name="intro">Introduction to the FOAF Pane</a></h3>
+    <p>The "FOAF (Friend-of-a-Friend) Pane" in the <a href="index.html">Tabulator</a> is an attempt to provide a Decentralized Open Social Network based on <a href="http://www.foaf-project.org/">FOAF</a> data. We hope that this will make Tabulator an easy platform to use the FOAF ontology for social networking, as easy as using popular social networking web sites. We hope to demonstrate that open, decentralised tools and standards can allow much of the 'Social Network' user experience to be reconstructed in a way that doesn't require lock-in to a particular proprietary service. There are many aspects to this that we don't address here - such as activity streams, microblogging (see <a href="http://www.xmpp.org/">XMPP</a>, <a href="http://laconi.ca/trac/">Laconi.ca</a> etc), widgets / apps (see <a href="http://www.w3.org/TR/widgets/">W3C's Widget work</a>, also <a href="http://code.google.com/apis/opensocial/">OpenSocial</a>). Our focus instead is largely on interactions with structured linked data, in a way that is extensible and takes account of it's distributed nature.
+    
+<!-- Note: Many thanks to Dan Brickley for the restructuring of the paragraph above--> 
+   
+    <!--As social networking is reaching a high level of excitement now, we hope to demonstrate that we can perform all that with open tools and protocols. We also aim to show that users can benefit from the integration of all their social netwoking data without any data lock-up.--></p>
+
+    <h3><a name="example">What can You do with the FOAF Pane?</a></h3>
+    
+    <p>Let's illustrate the functionality of the FOAF pane with a simple example:</p>
+
+    <p>Assume that you are browsing <a href="http://www.w3.org/People/Berners-Lee/card">Tim Berners-Lee's Card (FOAF file)</a> on Tabulator. You can open up the panes in the Outline Mode and explore the data. If you expand the "Primary topic" and click on the small FOAF icon, it will open up the FOAF pane. So, now assume you are Tim Berners-Lee and that you've checked "This is you?" as highlighted in the figure. As you go on exploring the <i>knows</i> list you come across "Joe Lambda". By opening up that pane you would be able to see whether Joe has listed Tim as a friend in his FOAF file as well. In this case he has! So, Tabulator finds out the common people in both the FOAF files and lists the mutual friends. However, if Joe has not listed Tim in his <i>knows</i> list, "You and Joe know each other" will be specified as "unconfirmed", but the common people from both the <i>knows</i> lists will be displayed.</p>
+
+    <p>The FOAF pane works inversely as well. Suppose you are browsing someone else's FOAF file, and you come across your FOAF data in a pane. You can then specify that it is you by clicking the checkbox "This is you". Then all of the other friend connections in the graph of FOAF data will be calculated and displayed accordingly.</p>
+   
+    <image src="img/Tim_knows_Joe.png" width="100%"/>
+
+    <h3><a name="challenges">Challenges not yet Addressed</a></h3>
+
+    <ul>
+      <li>Add and Delete Friends: The pane should have a checkbox <i>"I know this person"</i>. Depending on whether you ticked or unticked the checkbox, Tabulator should add or delete the triple from your FOAF file provided that it is directly SPARQL-updatable.</li>
+<li>Authentication Protocol to manage Private Data: Perhaps by using the <a href="http://oauth.net/">OAuth open authentication protocol</a>?</li>
+      </ul>
+    <p></p>
+
+      <h3><a name="suggestions">Got any Suggestions?</a></h3>
+    <p>Please submit all bugs and feature requests to the <a href="http://dig.csail.mit.edu/issues/tabulator">Tabulator Issue Tracker</a>. </p><p>General questions and discussion should be directed to the tabulator mailing list: tabulator at csail dot mit dot edu.
+    </p>
+
+    <hr/>
+
+    <footer>
+
+<address>
+  <small>$Revision: 24894 $<br />
+  $Date: 2008-08-21 $<br />
+  $Author: oshani $</small> 
+</address>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+</footer>
+    <hr/>
+
+      </body>
+</html>

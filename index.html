@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>The Tabulator Extension</title>
+    <script type="text/javascript">
+    function installExtension(uri){
+      InstallTrigger.install({
+      "Tabulator Extension": { URL: uri,
+      toString : function() { return this.URL; } } });
+    }
+    </script>
+    <link rel="stylesheet" href="../../2005/ajar/ajaw/general.css" type="text/css" />
+  </head>
+ 
+  <body>
+    <h1><a name="top">The Tabulator Extension</a></h1>
+    <p>
+    <img src="img/example1.jpg" style="border:solid #bbb 1px; padding:2px;" alt="(Image: A simple property table)"/>
+    <img src="img/example2.jpg" style="border:solid #bbb 1px; padding:2px;" alt="(Image: A query displayed on a map)"/>
+    <img src="img/example3.jpg" style="border:solid #bbb 1px; padding:2px;" alt="(Image: Editing a field in the outline)"/>
+    </p>
+    <h3><a name="latest">Releases:</a></h3>
+<p>Tabulator is now hosted on <a href="https://addons.mozilla.org/en-US/firefox/addon/5596">addons.mozilla.org</a>. If you download and install from <a href="https://addons.mozilla.org/en-US/firefox/addon/5596">there</a>, it will provide automatic updates through the Firefox Addon Manager. But make sure you register on the site before downloading the extension (Since the extension is hosted in the "Addons Sandbox", it can only be downloaded by registered users). </p>
+
+    <p>Alternatively, you can download and install the latest release from below. Note that automatic updates will NOT be provided if you use the versions listed below.</p>
+
+<h4>2008-Nov-24: Tabulator Extension Release 0.8.7 <small>(latest)</small></h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-7.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-7.xpi'); return false;">
+        Install the 0.8.7 release of the Tabulator Extension</a>
+    </div>
+    
+    <div style="float: right; margin: 0em 2em 2em 0em;">
+<a href="http://dig.csail.mit.edu/2008/Papers/MSNWS/images/foaf_pane_danbri.png"><img width="300px" src="http://dig.csail.mit.edu/2008/Papers/MSNWS/images/foaf_pane_danbri.png" alt="foaf pane" /></a></div>
+
+    <p>This release includes the "FOAF Pane" which lets you explore friends listed on your FOAF file and the instructions on how to create a "Web ID". It is also possible to create your FOAF file with some seed FOAF data on any WebDAV editable space, and add details later on.<br/> For more information on the background on this work please refer to the position paper <b><a href="http://dig.csail.mit.edu/2008/Papers/MSNWS/">Decentralization : The Future of Social Networking</a></b>. </p>
+   <p><i>Note: Make sure you turn on "Tools -> Data Browser -> Make Firefox RDF" upon installing the Firefox Extension. This is required because the FOAF ontology is not loaded if the accept header is not set to request RDF, and some labels will not be displayed properly.</i></p> 
+   <address>(SVN revision level: 25295)</address>
+
+<h4>2008-Oct-13: Tabulator Extension Release 0.8.6</h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-6.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-6.xpi'); return false;">
+        Install the 0.8.6 release of the Tabulator Extension</a>
+    </div>
+    <p>This release includes a hack to fix Tabulator caching. Now it is possible to reload the changes to an RDF document by clicking the Reload/Refresh button on the Firefox toolbar. Earlier you'd have to restart Firefox to see the changes you made.</p>
+    <p>This version also includes an embryonic version of an application which provides Polciy Based Access Control for tagging photos.</p>
+
+   <address>(SVN revision level: 24812)</address>
+
+   <h4>2008-Aug-06: Tabulator Extension Release 0.8.5 </h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-5.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-5.xpi'); return false;">
+        Install the 0.8.5 release of the Tabulator Extension</a>
+    </div>
+    <p>This is yet another quick bug fix release to support Firefox 3.0.1. The functionalities of Tabulator are
+    not any different than the previous release. The change is only in the <code>install.rdf</code>, where it involves the max 
+    Firefox version to be upgraded to 3.0.* from 3.0.0.*.</p>
+
+   <address>(SVN revision level: 24812)</address>
+
+   <h4>2008-June-19: Tabulator Extension Release 0.8.4</h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-4.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-4.xpi'); return false;">
+        Install the 0.8.4 release of the Tabulator Extension</a>
+    </div>
+    <p>This is a quick bug fix release to support Firefox 3.0. See the corresponding <a href="http://dig.csail.mit.edu/issues/tabulator/issue261">
+    tabulator issue</a>  for more information.</p>
+
+   <address>(SVN revision level: 24790)</address>
+
+   <h4>2008-March-20: Tabulator Extension Release 0.8.3</h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-3.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-3.xpi'); return false;">
+        Install the 0.8.3 release of the Tabulator Extension</a>
+    </div>
+
+    <p>This release includes the following features:</p>
+    <ul>
+        <li>Support for Firefox V3.0b</li><br/>
+        <li>Justification User Interface for integrated policy explanations 
+        <br/>This includes the following panes in addition to the default N3 view for data:
+        <br/><img src="ext/chrome/content/icons/1pt5a.gif" alt="Why" 
+        	style="height:20px;opacity:0.4;filter:alpha(opacity=40)"
+			onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100"
+			onmouseout="this.style.opacity=0.4;this.filters.alpha.opacity=40"/> 
+			"Why?" pane to explore the justification proof trace in a step by step manner
+		<br/><img src="http://dig.csail.mit.edu/2005/ajar/ajaw/icons/law.jpg" alt="Balance"
+			style="height:20px;opacity:0.4;filter:alpha(opacity=40)"
+			onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100"
+			onmouseout="this.style.opacity=0.4;this.filters.alpha.opacity=40"/> 
+			"Lawyer's View" pane which gives a summary of the scenario and the justification
+	<br/>You may try the following examples after installing the extension:
+	<ul>
+   <li>Telephone company <a href="http://mr-burns.w3.org/cgi-bin/server_cgi.py?logFile=http://dig.csail.mit.edu/TAMI/2007/s9/variation1/log.n3&rulesFile=http://dig.csail.mit.edu/TAMI/2007/s9/variation1/demo-policy.n3">denial of service</a> to someone connected to a CDT investigation</li>
+   <li>Application of international human rights law to <a href="http://mr-burns.w3.org/cgi-bin/server_cgi.py?logFile=http://dig.csail.mit.edu/2008/ARL/log.n3&rulesFile=http://dig.csail.mit.edu/2008/ARL/udhr-policy.n3">integration and use</a> of data from International Red Cross missing persons list with battlefield intelligence in Iraq.</li>
+</ul>
+	<br/>More information about the Justification UI could be found in the
+	<a href="http://dig.csail.mit.edu/TAMI/2008/JustificationUI/howto.html">Justification UI how-to guide.</a>
+	</li>
+    </ul>
+
+    <address>(SVN revision level: 17446)</address>
+    
+    
+    <h4>2008-Febrary-01: Tabulator Extension Release 0.8.2</h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-2.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-2.xpi'); return false;">
+        Install the 0.8.2 release of the Tabulator Extension</a>
+    </div>
+
+    <p>A quick release to get out important enhancement, about HTTP 303:</p.
+    <ul>
+        <li>When you followd a link to an object for which the server
+        made 303 HTTP response,
+        the tabulator extension would show you the document
+        about the thing instead of the thing itself.</li>
+        <li>A bug has bem removed which would disrupt the formatting in 
+        outline mode, for some things identified by several URIs.</li>
+        <li>When entering new data, a relationship between the 
+        current think and some other thing, there is, at the top of the
+        list in the auto-complete menu the "New..." optio which 
+        allows you to enter data about something the tabulator
+        hasn't seen in the new session. A new URI is made up for the thing,
+        in the document in which the data is being stored.
+        This functionality has been in some versions, but was not in the last.</li>
+    </ul>
+
+    <address>(SVN revision level: 11864)</address>
+    
+    
+    <h4>2007-December-31: Tabulator Extension Release 0.8.1</h4>
+
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-1.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-0-8-1.xpi'); return false;">
+        Install the 0.8.1 release of the Tabulator Extension</a>
+    </div>
+    <!--
+    <p>The following is for developers only. You must  be using a unix-like system.
+    This is a version with the .svn version control </p>
+   <div class="installButton">
+        <a href="http://dig.csail.mit.edu/2007/tab/release/tabulator-svn-0-8-1.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/tabulator-svn-0-8-1.xpi'); return false;">
+        Install the SVN - 0.8.1 release of the Tabulator Extension</a>
+    </div>
+    -->
+
+    <p>
+    This release is still very alpha.
+    While the old features may be more stable, new ones have been added, which
+    will be less stable.  But that's more fun, right? This release:
+    <ul>
+      <li>The system of 'panes' allows multiple views of an object
+      in outline view.
+        <ul>
+        <li>A list of the members of  class;</li>
+        <li>The normal view of the properties of a thing;</li>
+        <li>A view "under the hood" of what happened when a thing was looked up on the web;</li>
+        <li>A social "Friend of a Friend" view of people (see below)</li>
+        <li>For an image, the image itself</li>
+        <li>For a web page, the web page itself.</li>
+        </ul>
+        The ones at the top of the list have priority, the first one which
+        applies being selected as the default.
+      </li>
+      <li>The editing interface was different in the extension and online
+      versions, they have now been merged, but the merge might not have all the
+      features of both.</li>
+      <li>There remains a problem when following  link to, or laoding from the URI bar, 
+      something which teh server gives a HTTP 303 redirect code.
+      (A battle between Tabulator and Firefox).
+      Firefox follows the redirect, and so the display
+      isnot focussed on the original
+      thing; just (all) the information sent back is displayed.
+      </li>
+      <li>Recently, An embryonic Social Networking view <img
+       src="http://dig.csail.mit.edu/2007/tab/ext/chrome/content/icons/foaf/foafTiny.gif" />
+       of people allows you to easily
+      say you know someone, see which acquaintances you have in common.</li>
+    </ul>
+    
+      <h4>28th August, 2007:</h4>
+    <p>
+    An <span>alpha version</span> of the Tabulator Extension is stil available.  This release is still in testing.
+    The edit UI is generally usable, but still allows many edits that should not be allowed.
+    All bugs should be filed under the <a href="http://dig.csail.mit.edu/issues/tabulator">Tabulator Issue Tracker</a>.
+    For general discussion, head to <a href="http://esw.w3.org/topic/TabulatorExtension">Tabulator Extension - ESW Wiki</a>.
+    </p>
+    <p>
+    <span>Alpha Release:</span> <a href="http://dig.csail.mit.edu/2007/tab/release/databrowser.xpi"
+        onclick="installExtension('http://dig.csail.mit.edu/2007/tab/release/databrowser.xpi');
+        return false;">Install the alpha release of the Tabulator Extension</a>
+    </p>
+    <h3><a name="intro">Introduction:</a></h3>
+    <p>
+    The Tabulator Extension is an extension for Firefox that provides a
+     human-readable interface for linked data.
+    It is based on the on-line <a href="http://www.w3.org/2005/ajar/tab.html">Tabulator</a>,
+     a web-based interface for browsing RDF.
+    Using Tabulator's outline mode, query views, and back-end code,
+     the Tabulator Extension integrates the browsing of linked data directly
+      into the Firefox browser, making for a more natural and seamless experience when browsing linked data on the Web.
+    </p>
+    <p>
+    A primary goal of the Tabulator Extension is to explore how linked data could be displayed in the next generation of Web browsers.
+    The extension aims to make linked data human-readable by taking a document and picking out the actual <i>things</i> that the document describes.
+    The properties of these things are the displayed in a table, and then the links in that table can be followed to load more data about other things in other documents.
+    </p>
+    <p>
+    The Tabulator Extension was originally developed during Summer 2007 by the
+     <a href="http://www.w3.org/2005/ajar/tab">Tabulator Team</a>.
+    It is open source under the W3C Software License.
+    
+    </p>
+    <h3><a name="install">Installation:</a></h3>
+    <p>
+    To install the extension, click the download link in the Releases section.
+    </p>
+    <p>
+    Once the extension file is downloaded, it should automatically install.
+    After restarting Firefox, all documents served as application/rdf+xml and
+    text/n3 will be automatically loaded in the extension's outline view.
+    It may be necessary to disable other RDF-related extensions that could override the extension's capture of these documents.
+    </p>
+    <h3><a name="tutorial">Tutorial:</a></h3>
+    <p>
+    A tutorial for the Tabulator Extension can be found here: <a href="tabtutorial.html">Tabulator Extension Tutorial</a>.
+    </p>
+    </body>
+</html>

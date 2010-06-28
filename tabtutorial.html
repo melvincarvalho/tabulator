@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Using the Firefox Tabulator Extension</title>
+    <link rel="stylesheet" href="http://dig.csail.mit.edu/2005/ajar/ajaw/general.css" type="text/css" />
+    <script type="text/javascript">
+    function installExtension(){
+      InstallTrigger.install({
+      "Tabulator Extension": { URL: "http://dig.csail.mit.edu/2007/tab/databrowser.xpi",
+      toString : function() { return this.URL; } } });
+    }
+    </script>
+  </head>
+ 
+  <body>
+    <h1><a name="top">Tutorial: Tabulator Extension</a></h1>
+    <h3><a name="contents">Table of Contents:</a></h3>
+    <ul style="list-style-type: none">
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#install">Installation</a></li>
+      <li><a href="#data">Loading Data</a></li>
+      <li><a href="#editing">Editing Data</a></li>
+      <li><a href="#queries">Creating Queries</a></li>
+      <li><a href="#extra">Other Features</a></li>
+      <li><a href="#help">Help</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <h3><a name="intro">Introduction:</a></h3>
+    <p>
+    The Tabulator Extension is an extension for Firefox that provides a human-readable interface for linked data.
+    It is based on the <a href="http://www.w3.org/2005/ajar/tab.html">Tabulator</a>, a web-based interface for browsing RDF.
+    Using Tabulator's outline mode, query views, and back-end code, the Tabulator Extension integrates the browsing of linked data directly into the Firefox browser, making for a more natural and seamless experience when browsing linked data on the Web.
+    </p>
+    <p>
+    A primary goal of the Tabulator Extension is to explore how linked data could be displayed in the next generation of Web browsers.
+    The Tabulator aims to make linked data human-readable by taking a document and picking out the actual <i>things</i> that the document describes.
+    The properties of these things are the displayed in a table, and then the links in that table can be followed to load more data about other things in other documents.
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="install">Installation:</a></h3>
+    <p>
+    A link to the latest version of the extension can be found on the Tabulator Extension site: <a href="http://dig.csail.mit.edu/2007/tab">The Tabulator Extension</a>.
+    Once the extension file is downloaded, it should automatically install.
+    After restarting Firefox, all documents served as application/rdf+xml and text/n3 
+    (and for a while legacy documents served as text/rdf+n3)
+    will be automatically loaded in the Tabulator's outline view.
+    It may be necessary to disable other RDF-related extensions that could override the Tabulator's capture of these documents.
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="data">Loading Data:</a></h3>
+    <p>
+    Once the Tabulator Extension is installed, simply loading a file that is served with mime type "application/rdf+xml" or "text/n3" will cause the document to be loaded in an outline view (try <a href="http://dig.csail.mit.edu/2005/ajar/ajaw/data#Tabulator">http://dig.csail.mit.edu/2005/ajar/ajaw/data#Tabulator</a>).
+    <br /><br /><img src="img/load-data.jpg" alt="(Image: Loading up the data for the Tabulator project)"/><br /><br />Other "things" with properties can be picked out by the presence of an arrow next to their label.
+    Clicking on this arrow will expand the new "thing" to be displayed in an embedded outline.
+    Alternatively, shift-clicking on the arrow will redirect Firefox directly to the URI of the associated thing.
+    </p>
+    <p>
+    The series of icons at the top of the property table provide extra information about a "document", when one is loaded.
+    The gear icon will display the Tabulator's internal information about the currently displayed document.
+    <br /><br /><img src="img/gear-data.jpg" alt="(Image: Viewing internal data about a document)"/><br /><br />
+    The table icon will display the property table, and the N3 and RDF/XML buttons will display the document's data in their respective formats.
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="editing">Editing Data:</a></h3>
+    <p>
+    One addition in the extension that has not yet been seen in previous incarnations of the Tabulator is the ability to perform inline edits.
+    Now, it is possible to modify data and attempt to send a SPARQL update to the source of the file directly inside of the outline user interface.
+    <br /><br /><img src="img/edit-data.jpg" alt="(Image: Editing the foaf:knows property of a foaf:person)"/><br /><br />
+    </p>
+    <p>
+    A test editing space is set up at <a href="http://dig.csail.mit.edu/2007/wiki/">http://dig.csail.mit.edu/2007/wiki/</a>.
+    Instructions on creating a new document are located at that page.
+    </p>
+    <p>
+    To initialize an edit, press the enter key or click on an already selected object (Editing a predicate is not yet supported).
+    Alternatively, one can add a new statement by pressing the + icon either at the bottom of the table or under a selected predicate.
+    An autocomplete menu will indicate labels for things that the Tabulator is already aware of.  To ignore this menu, press the escape key.
+    When entering a value for a predicate or object, it is possible to enter a URI by surrounding it with angle brackets.
+    For example, entering &lt;http://web.mit.edu/jambo/www/foaf.rdf#jambo&gt; will create a link to Tabulator developer James Hollenbach.
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="queries">Creating Queries:</a></h3>
+    <p>Having explored a bit by outline mode, you can then ask tabulator to query the web
+    of data, to make a table of all the things which match the pattern you select.
+    (Hence the name "Tabulator").  This is "query by example".
+    </p>
+
+    <h3>1. Focus on the starting point</h3>
+    <p>This is how it works. You first focus on a thing which will be the starting
+    point for your query. That means you make sure it is top thing you are looking
+    on in outline view. If it isn't, <b>shift-click on its grey triangle</b> to bring it to the top.
+
+    For example, for a list of <i>my</i> friends, I would
+    focuss on <i>me</i> and then select an example friend.  For data about the
+    events I have found in my browsing so far, I would focuss on the class "event" as a concept,
+    and then in the list of actual events (folder icon), select an example event.
+    <p/>
+
+    <h3>2. Select the fields you are interested in</h3>
+    <p>To select a field you click on it.
+    Make sure you click on the left-hand side, the name of the field,
+    not the value on the left-hand side.
+    </p>
+    <p>You can select several fields with alt+click (on Mac) or shift+click (on Linux).
+    Each field will a column in the table you are making.
+    For example, the following selection will generate a query for all Tabulator developers with both an AIM chat ID and a family name listed:
+    <br /><br /><img src="img/query-start.jpg" alt="(Image: Generating a query in the Tabulator Extension)"/><br /><br />
+    </p>
+    <h4>Optional fields</h3>
+    <p>If you want, say, a table of tabulator developers and their email addresses, and
+    you are interested in AIM addresses if they have them but you want them whether 
+    or not they have them, then you mark the AIM-id field as optional.  Click the
+    a little white circle icon next to the field.
+    </p>
+    <h3>3. Do the query</h3>
+    When you have selected the fields you need, press the "<b>Find All</b>" button. This will find all of the matches to the query that the Tabulator is aware of, following links as necessary.
+    The results of the query will appear in a new tab.
+    </p>
+    <h3>Looking at all your queries</h3>
+    <p>
+    The list of previously generated queries is integrated into Firefox as a sidebar.
+    This list can be accessed in the Firefox menu under View > Sidebar > <b>Data Browser Sidebar</b>.
+    By highlighting an old query in the query list and pressing an activated view button, the query will be displayed in a new tab in the selected view (Table, Map, Calendar, or Timeline).
+    <br /><br /><img src="img/map-query.jpg" alt="(Image: A Map of Tabulator Developers)"/><br /><br />
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="extra">Other Features:</a></h3>
+    <p>
+    An error log for the Tabulator can be accessed under Tools > Data Browser Log.
+    </p>
+    <p>
+    A window displaying all of the sources currently loaded by the Tabulator can be accessed under View > Data Sources.
+    The currently selected node's source document will be highlighted in yellow on the Data Sources page.
+    Documents that have failed to load are highlighted in red.
+    </p>
+    <p>
+    Firefox can be made to explicitly request application/rdf+xml and text/n3 by selecting the option "Make Firefox request RDF" under Tools > Data Browser.
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="help">Help:</a></h3>
+    <p>
+    Please submit all bugs and feature requests to the <a href="http://dig.csail.mit.edu/issues/tabulator">Tabulator Issue Tracker</a>.
+    </p>
+    <a href="#top">Back To Top</a>
+    <h3><a name="contact">Contact:</a></h3>
+    <p>
+    General questions and discussion should be directed to the tabulator mailing list: tabulator at csail dot mit dot edu.
+    </p>
+    <a href="#top">Back To Top</a>
+  </body>
+</html>
